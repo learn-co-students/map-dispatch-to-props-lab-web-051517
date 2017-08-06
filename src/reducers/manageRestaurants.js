@@ -12,4 +12,4 @@ export default function manageRestaurants(state = {
       return state;
 
   }
-};
+}; 
