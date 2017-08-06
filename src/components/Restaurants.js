@@ -13,7 +13,7 @@ export class Restaurants extends Component {
           {restaurants}
         </ul>
       </div>
-    );
+    ); 
   }
 };
 
