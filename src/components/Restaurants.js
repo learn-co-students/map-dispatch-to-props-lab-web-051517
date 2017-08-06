@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 export class Restaurants extends Component {
 
   render() {
 
-    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>{restaurant.name}</li>);
+    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>{restaurant.name}</li>)
 
     return (
       <div>
@@ -13,12 +13,12 @@ export class Restaurants extends Component {
           {restaurants}
         </ul>
       </div>
-    );
+    )
   }
-};
+}
 
 function mapStateToProps(state){
   return {restaurants: state.restaurants}
 }
 
-export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants);
+export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants)

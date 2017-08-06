@@ -1,32 +1,34 @@
-import React, { Component } from 'react';
-import { addRestaurant } from '../actions/restaurants';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { addRestaurant } from '../actions/restaurants'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 export class RestaurantInput extends Component {
 
   constructor(props){
-    super(props);
+    super(props)
 
     this.state = {
-      name: '', location: ''
-    };
+      name: '', 
+      location: ''
+    }
   }
 
   handleOnNameChange(event) {
     this.setState({
       name: event.target.value
-    });
+    })
   }
 
   handleOnLocationChange(event) {
     this.setState({
       location: event.target.value
-    });
+    })
   }
 
   handleOnSubmit(event) {
-    event.preventDefault();
-    this.props.addRestaurant(this.state);
+    event.preventDefault()
+    this.props.addRestaurant(this.state)
   }
 
   render() {
@@ -46,8 +48,15 @@ export class RestaurantInput extends Component {
         </p>
         <input type="submit" />
       </form>
-    );
+    )
   }
-};
+}
 
-export const ConnectedRestaurantInput = connect(null, null)(RestaurantInput)
+function mapDispatchToProps(dispatch) {
+
+  return bindActionCreators({
+    addRestaurant: addRestaurant
+  }, dispatch)
+}
+
+export const ConnectedRestaurantInput = connect(null, mapDispatchToProps)(RestaurantInput)
