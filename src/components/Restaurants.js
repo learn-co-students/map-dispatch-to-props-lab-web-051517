@@ -21,4 +21,6 @@ function mapStateToProps(state){
   return {restaurants: state.restaurants}
 }
 
+
+
 export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants);
